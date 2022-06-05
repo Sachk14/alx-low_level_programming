@@ -2,7 +2,6 @@
 
 /**
  * main - prints to the standard error
- *
  * Return: one
  */
 
