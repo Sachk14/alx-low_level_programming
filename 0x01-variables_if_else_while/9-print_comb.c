@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main -  program that prints all possible combinations of single-digit
  * separated by ,followed by a space
  * Return: 0
