@@ -1,20 +1,21 @@
 #include "main.h"
-#include "1-alphabet.c"
 
-void print_alphabet_x10(void);
-
-/**
- * print_alphabet_x10 - order from a to z ten times
+/** print_alphabet_x10 - prints the alphabet in lowercase
+ * followed by new line.
  *
- * Return: 10x alphabet
+ * Return: Always 0.
  */
-
 void print_alphabet_x10(void)
 {
-	int repeat;
+	int i;
+	int j;
 
-	for (repeat = 0; repeat <= 10; repeat++)
+	for (i = '0'; i <= '9'; i++)
 	{
-		print_alphabet();
+		for (j = 'a'; j <= 'z'; j++)
+		{
+			_putchar(j);
+		}
+		_putchar('\n');
 	}
 }
