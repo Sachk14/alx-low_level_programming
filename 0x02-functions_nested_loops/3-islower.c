@@ -1,20 +1,16 @@
+/*#include <stdio.h>*/
 #include "main.h"
-
 /**
- * _islower - check if int c is lower
- *
- * @c: int checked
- * Return: 1 if lower,0 if upper
+ * _islower -  checks for lowercase character and return 1 or 0
+ * @c:int
+ * Return: @c value
  */
-
 int _islower(int c)
 {
-	f (c  >= 97  &&  c  <=  122)
-	{
+	if (c > 96 && c < 123)
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
+	/* putchar (c); */
+	/* printf("la va de c=%d\n", c); */
 }
