@@ -1,21 +1,24 @@
-#include"main.h"
+#include "main.h"
 
 /**
- * main - Entry point
+ * main - check the code for ALX School students.
  *
- * Description: prints _putchar using putchar prototype
+ * Program that prints Holberton, followed by a new line
  *
- * Return: Always 0 (Success)
+ * Return: always 0 (success)
  */
 
 int main(void)
 {
-	char str[] = "_putchar";
-	int ch;
+	char s[] = "_putchar";
+	int i = 0;
 
-	for (ch = 0; ch < 8; ++ch)
-		_putchar(str[ch]);
-	_putchar('\n');
+	while (s[i] != '\0')
+	{
+		_putchar(s[i]);
+		i++;
+	}
+	_putchar(10);
 
 	return (0);
 }
