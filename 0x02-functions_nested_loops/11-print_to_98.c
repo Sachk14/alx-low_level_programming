@@ -6,8 +6,10 @@
  * by a new line
  *
  * @n: integer
+ *
  * Return: Nothing
  */
+
 void print_to_98(int n)
 {
 	if (n > 98)
