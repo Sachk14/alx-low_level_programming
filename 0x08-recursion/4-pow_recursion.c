@@ -1,6 +1,3 @@
-#include "main.h"
-#include <stdio.h>
-
 /**
  * factorial - a function that finds the factorial of *n
  *
