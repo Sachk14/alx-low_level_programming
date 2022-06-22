@@ -1,17 +1,26 @@
+#include "main.h"
 /**
- * factorial - a function that finds the factorial of *n
+ * _pow_recursion- power of int
+ * @x: int to be powerd
+ * @y: int to be raised
  *
- * @n: positive number
- *
- *
- * Return: factorial of @n
+ * Return: result
  */
-int factorial(int n)
+int _pow_recursion(int x, int y)
 {
-	if (n < 0)		/*error -1 if number is negative*/
+	int result = x;
+
+	if (y < 0)
+	{
+
 		return (-1);
-	else if (n == 0)	/*return factorial of 0 = 1*/
+	}
+	else if  (y == 0)
+	{
 		return (1);
-	else			/*do factorial of n if its not less or equal to 0*/
-		return (n * factorial(n - 1));
+	}
+
+	result *= _pow_recursion(x, y - 1);
+
+	return (result);
 }
