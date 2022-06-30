@@ -1,46 +1,53 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
+
 /**
- * string_nconcat-concatinates two strings
- * @s1: main
- * @s2: school
- * @n:checked
- * Return: concatinated string
+ * string_nconcat - function that concatenates two strings
+ *
+ * @s1: string 1
+ * @s2: string 2
+ * @n: bytes of @s2 to add to @s1 to be a new string
+ *
+ * Return: new string followed by the first @n bytes
+ *   of string 2 @s2 or NULL
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *varcon;
+	unsigned int l1, l2, i, j;
+	char *str;
 
-	unsigned int i, j, len = n;
-
+	/*treat NULL as empty string*/
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	for (i = 0; s1[i]; i++)
-		;
+	l1 = l2 = 0;
+	/*length of both s1 & s2 respectively*/
+	while (s1[l1] != '\0')
+		l1++;
+	while (s2[l2] != '\0')
+		l2++;
 
-	if (j > n)
-		j = n;
+	/*set n to length of s2*/
+	if (n >= l2)
+		n = l2;
 
-	varcon = malloc(sizeof(char) * (i + j + 1));
-
-	if (varcon == NULL)
+	str = (char *) malloc((l1 + n + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
 
-	for (len = 0; len < i; len++)
+	/*add s1 to str*/
+	for (i = 0; s1[i] != '\0'; i++)
+		str[i] = s1[i];
+	/*add s2 n bytes to str*/
+	for (j = 0; j < n && s2[j] != '\0'; j++)
 	{
-		varcon[len] = s1[len];
+		str[i] = s2[j];
+		i++;
 	}
-
-	for (len = 0; len < j; len++)
-	{
-		varcon[len + i] = s2[len];
-	}
-
-	varcon[i + j] = '\0';
-
-	return (varcon);
+	str[i] = '\0';
+	return (str);
 }
